@@ -80,10 +80,17 @@ export default function GamePage() {
         y: Math.min(Math.max(y, 100), window.innerHeight - 100),
       })
 
-      // Increased duration to 3.5 seconds
-      setTimeout(() => {
+      // Clear any existing timeout to prevent overlap
+      if (showMessage) {
+        clearTimeout(showMessage.timeoutId)
+      }
+
+      // Set a new timeout for 3.5 seconds
+      const timeoutId = setTimeout(() => {
         setShowMessage(null)
       }, 3500)
+
+      // Optionally store timeoutId in state if needed for cleanup
     }
   }
 
@@ -91,7 +98,7 @@ export default function GamePage() {
     if (poppedCount === 10) {
       const timer = setTimeout(() => {
         router.push("/playlist")
-      }, 3000)
+      }, 6000) // 3s for "Good Girl!" + 3s delay = 6s total
       return () => clearTimeout(timer)
     }
   }, [poppedCount, router])
@@ -197,12 +204,13 @@ export default function GamePage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ delay: 3 }} // 3-second delay before showing "Good Girl!"
           >
             <motion.div
               className="bg-lavender p-8 rounded-2xl shadow-2xl max-w-md text-center"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 3.3 }} // Slight delay after overlay for smooth transition
             >
               <h2 className="text-2xl font-bold text-[#DE8971] mb-4">Good Girl!</h2>
               <p className="text-lg mb-6 text-[#8F4068]">You found all the birthday messages!</p>

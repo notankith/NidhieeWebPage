@@ -71,9 +71,9 @@ export default function LandingPage() {
                 name: "Cinnamon Girl",
                 src: "https://raw.githubusercontent.com/notankith/Web-Hosting-Resource/main/music1.mp3",
               },
-              { name: "Pee Loon", src: "https://raw.githubusercontent.com/notankith/Web-Hosting-Resource/main/music3.mp3" },
+              { name: "Sex Drugs Etc", src: "https://raw.githubusercontent.com/notankith/Web-Hosting-Resource/main/music3.mp3" },
               {
-                name: "Ente Kannil Ninkkaayi",
+                name: "End Of Beginning",
                 src: "https://raw.githubusercontent.com/notankith/Web-Hosting-Resource/main/music2.mp3",
               },
               { name: "No Music (you're boring)", src: "" },

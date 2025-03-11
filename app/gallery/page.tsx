@@ -52,14 +52,19 @@ export default function GalleryPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4 relative">
+    <main 
+      className="flex min-h-screen flex-col items-center justify-center p-4 relative bg-cover bg-center"
+      style={{
+        backgroundImage: `url('https://i.imgur.com/vkdNRPU.jpeg')`
+      }}
+    >
       <motion.h1
-        className="text-3xl md:text-4xl font-bold text-center text-periwinkle mb-8"
+        className="text-3xl md:text-4xl font-bold text-center text-[#F5F5DC]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: isLoaded ? 1 : 0, y: isLoaded ? 0 : -20 }}
         transition={{ duration: 0.8 }}
       >
-        Our Memories
+        Oh take a look at these
       </motion.h1>
 
       <motion.div
@@ -158,4 +163,3 @@ export default function GalleryPage() {
     </main>
   )
 }
-

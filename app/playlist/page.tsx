@@ -65,7 +65,7 @@ export default function PlaylistPage() {
         transition={{ duration: 0.8, delay: 1.5 }}
         onClick={handleNext}
       >
-        Final Surprise
+        Continue
       </motion.button>
 
       {/* Floating music notes */}

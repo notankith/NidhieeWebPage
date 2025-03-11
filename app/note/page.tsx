@@ -19,20 +19,32 @@ export default function NotePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 relative">
+    <main
+      className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6"
+      style={{
+        backgroundImage: `url('https://i.imgur.com/0DwAPoi.jpeg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
       <motion.div
-        className="max-w-2xl w-full bg-[#D7C0AE] backdrop-blur-sm p-8 md:p-12 rounded-2xl shadow-xl"
+        className="w-full max-w-2xl bg-[#D7C0AE]/80 backdrop-blur-md p-6 sm:p-8 md:p-12 rounded-2xl shadow-xl"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-3xl md:text-4xl font-bold text-center text-[#9E7676] mb-8">Happy Birthday,Mwole!</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-[#9E7676] mb-6 md:mb-8">
+          Happy Birthday, Mwole!
+        </h1>
 
-        <div className="space-y-6">
-          <p className="typing-effect text-lg md:text-xl text-[#354259] leading-relaxed">So First Of All!</p>
+        <div className="space-y-4 sm:space-y-6">
+          <p className="text-base sm:text-lg md:text-xl text-[#354259] leading-relaxed">
+            So First Of All!
+          </p>
 
           <motion.p
-            className="text-lg md:text-xl text-[#594545] leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-[#594545] leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ delay: 1, duration: 1 }}
@@ -41,25 +53,25 @@ export default function NotePage() {
           </motion.p>
 
           <motion.p
-            className="text-lg md:text-xl text-[#594545] leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-[#594545] leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ delay: 2, duration: 1 }}
           >
-            And since you told gifting handmade origami stuffs are more valuable! this is my version of handmade origami gifts but digital and remote (yeh i put some serious efforts making this)
+            And since you told me gifting handmade origami stuff is more valuable, this is my digital and remote version of handmade origami gifts (yep, I put some serious effort into this)!
           </motion.p>
 
           <motion.p
-            className="text-lg md:text-xl text-[#594545] leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-[#594545] leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ delay: 3, duration: 1 }}
           >
-            also this website idea thing could be cheesy or wtv in your POV but atleast i made some efforts to gift or show you something😭
+            This website idea might seem cheesy or whatever from your POV, but at least I made an effort to gift you something special! 😭
           </motion.p>
 
           <motion.p
-            className="text-lg md:text-xl text-right font-medium text-periwinkle"
+            className="text-base sm:text-lg md:text-xl text-right font-medium text-periwinkle"
             initial={{ opacity: 0 }}
             animate={{ opacity: isVisible ? 1 : 0 }}
             transition={{ delay: 4, duration: 1 }}
@@ -72,7 +84,7 @@ export default function NotePage() {
       </motion.div>
 
       <motion.button
-        className="mt-8 py-3 px-8 bg-gradient-to-r from-periwinkle to-rose-gold text-white text-xl rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+        className="mt-6 sm:mt-8 py-2 sm:py-3 px-6 sm:px-8 bg-gradient-to-r from-periwinkle to-rose-gold text-white text-base sm:text-xl rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         initial={{ opacity: 0 }}
@@ -85,22 +97,22 @@ export default function NotePage() {
 
       {/* Floating hearts */}
       {isMounted &&
-        Array.from({ length: 15 }).map((_, i) => (
+        Array.from({ length: 10 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute text-2xl pointer-events-none"
+            className="absolute text-xl sm:text-2xl pointer-events-none"
             initial={{
-              x: Math.random() * (typeof window !== "undefined" ? window.innerWidth : 1000),
-              y: Math.random() * (typeof window !== "undefined" ? window.innerHeight : 800),
+              x: Math.random() * (typeof window !== "undefined" ? window.innerWidth - 20 : 1000),
+              y: Math.random() * (typeof window !== "undefined" ? window.innerHeight - 20 : 800),
               opacity: 0,
             }}
             animate={{
-              y: [0, -30, 0],
-              opacity: [0, 0.7, 0],
+              y: [0, -20, 0],
+              opacity: [0, 0.5, 0],
             }}
             transition={{
               repeat: Number.POSITIVE_INFINITY,
-              duration: 3 + Math.random() * 5,
+              duration: 3 + Math.random() * 3,
               delay: Math.random() * 5,
             }}
           >
@@ -110,4 +122,3 @@ export default function NotePage() {
     </main>
   )
 }
-
